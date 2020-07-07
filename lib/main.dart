@@ -1,7 +1,3 @@
-import 'package:bytebank2/database/app_database.dart';
-import 'package:bytebank2/models/contact.dart';
-import 'package:bytebank2/screens/contact_form.dart';
-import 'package:bytebank2/screens/contacts_list.dart';
 import 'package:bytebank2/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +8,7 @@ void main() {
     findAll().then((contacts) => debugPrint(contacts.toString()));
   });
    */
+  //_dao.findAll().then((contacts) => debugPrint(contacts.toString()));
 }
 
 class BytebankApp2 extends StatelessWidget {
