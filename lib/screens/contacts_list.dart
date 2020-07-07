@@ -11,7 +11,7 @@ class ContactsList extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: Text('Contacts'),),
+      appBar: AppBar(title: Text('Transfer'),),
       body: FutureBuilder<List<Contact>>(
         initialData: List(),
         future: _dao.findAll(),
