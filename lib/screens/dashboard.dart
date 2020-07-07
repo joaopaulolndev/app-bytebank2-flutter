@@ -1,5 +1,5 @@
-import 'package:bytebank2/screens/contacts_list.dart';
-import 'package:bytebank2/screens/transactions_list.dart';
+import 'package:bytebank/screens/contacts_list.dart';
+import 'package:bytebank/screens/transactions_list.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -28,9 +28,9 @@ class Dashboard extends StatelessWidget {
                   onClick: () => _showContactsList(context),
                 ),
                 _FeatureItem(
-                    'Transaction Feed',
-                    Icons.description,
-                    onClick: () => _showTransactionsList(context),
+                  'Transaction Feed',
+                  Icons.description,
+                  onClick: () => _showTransactionsList(context),
                 ),
               ],
             ),
@@ -40,27 +40,33 @@ class Dashboard extends StatelessWidget {
     );
   }
 
-  void _showContactsList(BuildContext context){
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => ContactsList()
-    ));
+  void _showContactsList(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => ContactsList(),
+      ),
+    );
   }
 
   _showTransactionsList(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => TransactionsList()
-    ));
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => TransactionsList(),
+      ),
+    );
   }
-
 }
 
 class _FeatureItem extends StatelessWidget {
-
   final String name;
   final IconData icon;
   final Function onClick;
 
-  _FeatureItem(this.name, this.icon, {@required this.onClick});
+  _FeatureItem(
+    this.name,
+    this.icon, {
+    @required this.onClick,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -71,14 +77,24 @@ class _FeatureItem extends StatelessWidget {
         child: InkWell(
           onTap: () => onClick(),
           child: Container(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             width: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Icon(icon, color: Colors.white, size: 24.0,),
-                Text(name, style: TextStyle(color: Colors.white, fontSize: 16.0),)
+                Icon(
+                  icon,
+                  color: Colors.white,
+                  size: 24.0,
+                ),
+                Text(
+                  name,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0,
+                  ),
+                )
               ],
             ),
           ),

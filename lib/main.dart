@@ -1,18 +1,13 @@
-import 'package:bytebank2/screens/dashboard.dart';
+import 'package:bytebank/screens/dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:uuid/uuid.dart';
 
 void main() {
-  runApp(BytebankApp2());
-  /*
-  save(Contact(0, 'JOAO', 1000)).then((id) {
-    findAll().then((contacts) => debugPrint(contacts.toString()));
-  });
-   */
-  //_dao.findAll().then((contacts) => debugPrint(contacts.toString()));
+  runApp(BytebankApp());
 }
 
-class BytebankApp2 extends StatelessWidget {
-  // This widget is the root of your application.
+class BytebankApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,10 +16,9 @@ class BytebankApp2 extends StatelessWidget {
         accentColor: Colors.blueAccent[700],
         buttonTheme: ButtonThemeData(
           buttonColor: Colors.blueAccent[700],
-          textTheme: ButtonTextTheme.primary
+          textTheme: ButtonTextTheme.primary,
         ),
       ),
-      debugShowCheckedModeBanner: false,
       home: Dashboard(),
     );
   }
